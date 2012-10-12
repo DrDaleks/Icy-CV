@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="ICY_HOME/icy.jar"/>
+	<classpathentry kind="src" path="/EzPlug"/>
+	<classpathentry kind="lib" path="javacpp.jar"/>
+	<classpathentry kind="lib" path="javacv.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
