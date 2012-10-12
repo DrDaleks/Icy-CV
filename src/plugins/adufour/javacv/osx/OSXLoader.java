@@ -26,6 +26,22 @@ public class OSXLoader
                 String basePath = new File("").getAbsolutePath() + "/";
                 
                 ArrayList<String> libs = new ArrayList<String>();
+                libs.add("libopencv_core.2.4.dylib");
+                libs.add("libopencv_imgproc.2.4.dylib");
+                libs.add("libopencv_highgui.2.4.dylib");
+                libs.add("libopencv_flann.2.4.dylib");
+                libs.add("libopencv_features2d.2.4.dylib");
+                libs.add("libopencv_ml.2.4.dylib");
+                libs.add("libopencv_nonfree.2.4.dylib");
+                libs.add("libopencv_objdetect.2.4.dylib");
+                libs.add("libopencv_photo.2.4.dylib");
+                libs.add("libopencv_video.2.4.dylib");
+                libs.add("libopencv_calib3d.2.4.dylib");
+                libs.add("libopencv_gpu.2.4.dylib");
+                libs.add("libopencv_stitching.2.4.dylib");
+                libs.add("libopencv_legacy.2.4.dylib");
+                libs.add("libopencv_videostab.2.4.dylib");
+                libs.add("libopencv_contrib.2.4.dylib");
                 libs.add("libjniopencv_calib3d.dylib");
                 libs.add("libjniopencv_core.dylib");
                 libs.add("libjniopencv_features2d.dylib");
