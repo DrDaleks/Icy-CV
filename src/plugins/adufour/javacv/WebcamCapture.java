@@ -6,6 +6,7 @@ import icy.image.IcyBufferedImage;
 import icy.math.FPSMeter;
 import icy.sequence.Sequence;
 import icy.sequence.SequenceUtil;
+import icy.system.IcyHandledException;
 import icy.system.SystemUtil;
 import icy.system.thread.ThreadUtil;
 import icy.type.DataType;
@@ -52,6 +53,8 @@ public class WebcamCapture extends EzPlug
     public void execute()
     {
         cc = opencv_highgui.cvCreateCameraCapture(0);
+        
+        if (cc == null) throw new IcyHandledException("No camera detected.");
         
         switch (format.getValue(true))
         {
@@ -120,7 +123,6 @@ public class WebcamCapture extends EzPlug
     @Override
     public void clean()
     {
-        
         if (cc != null) opencv_highgui.cvReleaseCapture(cc);
     }
     
@@ -152,7 +154,7 @@ public class WebcamCapture extends EzPlug
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                timer.stop();
+                if (timer != null) timer.stop();
                 if (cc != null) opencv_highgui.cvReleaseCapture(cc);
             }
         }));
