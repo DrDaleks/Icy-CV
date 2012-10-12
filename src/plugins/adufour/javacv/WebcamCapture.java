@@ -22,7 +22,6 @@ import plugins.adufour.ezplug.EzVar;
 import plugins.adufour.ezplug.EzVarEnum;
 import plugins.adufour.ezplug.EzVarInteger;
 import plugins.adufour.ezplug.EzVarListener;
-import plugins.adufour.javacv.osx.OSXLoader;
 
 import com.googlecode.javacv.cpp.opencv_core.IplImage;
 import com.googlecode.javacv.cpp.opencv_highgui;
@@ -52,30 +51,6 @@ public class WebcamCapture extends EzPlug
     @Override
     public void execute()
     {
-        if (1 > 0)
-        {
-            String fileName = "/Users/adufour/Desktop/2012-10-02_18_40_15.mov";
-            CvCapture cc = opencv_highgui.cvCreateFileCapture(fileName);
-            
-            try
-            {
-                Sequence s = new Sequence(fileName);
-                int t = 0;
-                while (opencv_highgui.cvGrabFrame(cc) == 1 && t < 20)
-                {
-                    IplImage ipl = opencv_highgui.cvRetrieveFrame(cc);
-                    IcyBufferedImage icy = IcyBufferedImage.createFrom(ipl.getBufferedImage());
-                    s.setImage(t++, 0, icy);
-                }
-                addSequence(s);
-            }
-            catch (Exception e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return;
-        }
         cc = opencv_highgui.cvCreateCameraCapture(0);
         
         switch (format.getValue(true))
@@ -152,9 +127,7 @@ public class WebcamCapture extends EzPlug
     @Override
     protected void initialize()
     {
-        JavaCVLoader.initialize();
-        
-        
+        JavaCV.initialize();
         
         addEzComponent(format);
         addEzComponent(interval);
