@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="var" path="ICY_HOME/icy.jar"/>
-	<classpathentry kind="src" path="/EzPlug"/>
 	<classpathentry kind="lib" path="javacv_osx_2.4.2.jar"/>
 	<classpathentry kind="lib" path="javacpp-0.3.jar"/>
+	<classpathentry kind="var" path="ICY_HOME/plugins/adufour/ezplug/EzPlug.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
