@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 
 public class X86Loader
@@ -27,10 +28,12 @@ public class X86Loader
 			{
 				JarClassLoader jcl = (JarClassLoader) cl;
 				System.out.print("Loading JavaCV v.2.4.3...");
-				// InputStream javacv = X86Loader.class.getResourceAsStream("javacv_x86_2.4.3.jar");
-				// jcl.add(javacv);
 				jcl.add(X86Loader.class.getResource("javacv_x86_2.4.3.jar"));
 				System.out.println("done.");
+			}
+			else if (cl instanceof URLClassLoader)
+			{
+				// Probably running from an IDE, hopefully JavaCPP is already in the classpath
 			}
 			else
 			{
